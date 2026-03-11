@@ -47,8 +47,8 @@ export function RunStatsPanel() {
       dungeonEntry.totalRuns += 1
       dungeonEntry.totalDefeated += (run.enemiesDefeated ?? 0)
 
-      if (!dungeonEntry.byAlgorithm[run.algorithmUsed]) {
-        dungeonEntry.byAlgorithm[run.algorithmUsed] = {
+      if (!dungeonEntry.byAlgorithm[run.algorithmUsed ?? 'unknown']) {
+        dungeonEntry.byAlgorithm[run.algorithmUsed ?? 'unknown'] = {
           runs: 0,
           totalDefeated: 0,
         }
