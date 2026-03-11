@@ -17,7 +17,7 @@ export function RunStatsPanel() {
   // Compute aggregated statistics
   const dungeonStats = useMemo(() => {
     const statsMap: Record<
-      number,
+      string | number,
       {
         dungeonId: number
         dungeonName: string
