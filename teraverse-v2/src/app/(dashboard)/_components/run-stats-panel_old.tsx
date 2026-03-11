@@ -37,7 +37,7 @@ export function RunStatsPanel() {
       if (!statsMap[run.dungeonId]) {
         statsMap[run.dungeonId] = {
           dungeonId: run.dungeonId,
-          dungeonName: run.dungeonName,
+          dungeonName: run.dungeonName ?? '',
           totalRuns: 0,
           totalDefeated: 0,
           byAlgorithm: {},
