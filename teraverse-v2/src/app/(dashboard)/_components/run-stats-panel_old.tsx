@@ -33,7 +33,7 @@ export function RunStatsPanel() {
       }
     > = {}
 
-    runs.forEach((run: { dungeonId: string | number; algorithmUsed?: string; enemiesDefeated?: number; success?: boolean }) => {
+    runs.forEach((run: { dungeonId: string | number; dungeonName?: string; algorithmUsed?: string; enemiesDefeated?: number; success?: boolean }) => {
       if (!statsMap[run.dungeonId]) {
         statsMap[run.dungeonId] = {
           dungeonId: run.dungeonId,
