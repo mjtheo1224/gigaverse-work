@@ -45,7 +45,7 @@ export function RunStatsPanel() {
       }
       const dungeonEntry = statsMap[run.dungeonId]
       dungeonEntry.totalRuns += 1
-      dungeonEntry.totalDefeated += run.enemiesDefeated
+      dungeonEntry.totalDefeated += (run.enemiesDefeated ?? 0)
 
       if (!dungeonEntry.byAlgorithm[run.algorithmUsed]) {
         dungeonEntry.byAlgorithm[run.algorithmUsed] = {
