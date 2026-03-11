@@ -154,7 +154,7 @@ export function AlgorithmSelector() {
               )
               if (relevantRuns.length > 0) {
                 const totalDefeated = relevantRuns.reduce(
-                  (sum, run) => sum + run.enemiesDefeated,
+                  (sum: number, run: { enemiesDefeated?: number }) => sum + (run.enemiesDefeated ?? 0),
                   0
                 )
                 const avg = totalDefeated / relevantRuns.length
