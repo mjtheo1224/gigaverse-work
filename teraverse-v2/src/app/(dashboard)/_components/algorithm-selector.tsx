@@ -105,7 +105,7 @@ export function AlgorithmSelector() {
         (r: { dungeonId: string | number | null; algorithmUsed: string; enemiesDefeated?: number }) => r.dungeonId === currentDungeonId && r.algorithmUsed === algo.id
       )
       if (relevantRuns.length > 0) {
-        const totalDefeated = relevantRuns.reduce((sum, run) => sum + run.enemiesDefeated, 0)
+        const totalDefeated = relevantRuns.reduce((sum: number, run: { enemiesDefeated?: number }) => sum + (run.enemiesDefeated ?? 0), 0)
         averageDefeated = totalDefeated / relevantRuns.length
         displayLabel = `Avg: ${averageDefeated.toFixed(1)}`
       }
