@@ -19,7 +19,7 @@ export function RunStatsPanel() {
     const statsMap: Record<
       string | number,
       {
-        dungeonId: number
+        dungeonId: string | number
         dungeonName: string
         totalRuns: number
         totalDefeated: number
