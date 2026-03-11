@@ -102,7 +102,7 @@ export function AlgorithmSelector() {
 
     if (currentDungeonId !== null) {
       const relevantRuns = runs.filter(
-        (r: any) => r.dungeonId === currentDungeonId && r.algorithmUsed === algo.id
+        (r: { dungeonId: string | number | null; algorithmUsed: string; enemiesDefeated?: number }) => r.dungeonId === currentDungeonId && r.algorithmUsed === algo.id
       )
       if (relevantRuns.length > 0) {
         const totalDefeated = relevantRuns.reduce((sum, run) => sum + run.enemiesDefeated, 0)
@@ -150,7 +150,7 @@ export function AlgorithmSelector() {
             let averageDefeatedStr = ''
             if (currentDungeonId !== null) {
               const relevantRuns = runs.filter(
-                (r: any) => r.dungeonId === currentDungeonId && r.algorithmUsed === algo.id
+                (r: { dungeonId: string | number | null; algorithmUsed: string; enemiesDefeated?: number }) => r.dungeonId === currentDungeonId && r.algorithmUsed === algo.id
               )
               if (relevantRuns.length > 0) {
                 const totalDefeated = relevantRuns.reduce(
